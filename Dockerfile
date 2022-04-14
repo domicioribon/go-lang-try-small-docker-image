@@ -5,7 +5,8 @@ WORKDIR /usr/src/app
 COPY app /usr/src/app/ 
 RUN go build main.go
 
-FROM hello-world:linux
+#FROM hello-world:linux
+FROM scratch
 WORKDIR /home
 COPY --from=builder /usr/src/app/main .
 
